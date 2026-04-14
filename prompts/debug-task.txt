@@ -1,0 +1,10 @@
+Investigate and fix the following bug.
+
+Bug:
+{{BUG}}
+
+Requirements:
+- identify root cause first
+- prefer the smallest safe fix
+- add or update regression coverage if appropriate
+- summarize cause, fix, and verification

@@ -1,0 +1,10 @@
+Implement the following task with the smallest safe change set.
+
+Task:
+{{TASK}}
+
+Constraints:
+- preserve existing patterns
+- avoid unrelated edits
+- update tests only where needed
+- summarize touched files, tests run, and remaining risks
