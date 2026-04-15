@@ -1,69 +1,69 @@
-# Codex Practices
+# Codex 实践
 
-## Best Uses
+## 适合用它的场景
 
-Codex is a strong choice for:
+Codex 很适合以下任务：
 
-- direct implementation tasks
-- bug fixes in a specific repo
-- repetitive edits
-- quick prototype changes
-- command-driven execution inside git repositories
+- 直接实现型任务
+- 某个具体仓库里的 bug 修复
+- 重复性改动
+- 快速原型修改
+- 在 git 仓库内完成命令驱动的编码执行
 
-## High-Value Prompt Shapes
+## 高价值提示词形态
 
-### 1. Focused implementation task
-
-```text
-Add X to this repo.
-Keep the change set small.
-Follow existing patterns.
-Run relevant tests and summarize results.
-```
-
-### 2. Bugfix task
+### 1. 聚焦的实现任务
 
 ```text
-Reproduce and fix the bug described below.
-Find the root cause first.
-Implement the smallest safe fix.
-Explain what changed and why.
+请在这个仓库里加入 X。
+保持改动集尽量小。
+遵循现有代码模式。
+运行相关测试，并总结结果。
 ```
 
-### 3. Test generation task
+### 2. Bug 修复任务
 
 ```text
-Add tests for the current behavior of X.
-Prefer meaningful coverage over broad low-value tests.
+请复现并修复下面描述的 bug。
+先找到根因。
+再实现最小且安全的修复。
+说明改了什么，以及为什么这样改。
 ```
 
-### 4. Refactor task
+### 3. 测试补充任务
 
 ```text
-Refactor this module for readability without changing behavior.
-Avoid unnecessary file moves.
-List any assumptions you make.
+请为当前 X 的行为补充测试。
+优先写有意义的覆盖，而不是泛泛而低价值的测试。
 ```
 
-## Good Habits
+### 4. 重构任务
 
-- give Codex concrete and bounded tasks
-- keep each run focused on one outcome
-- ensure the repo is clean before major runs
-- prefer running it inside real git repositories
-- inspect the final diff instead of trusting the summary alone
+```text
+请在不改变行为的前提下，重构这个模块以提升可读性。
+避免不必要的文件移动。
+列出你做出的假设。
+```
 
-## Common Failure Modes
+## 好习惯
 
-- too much change requested in one prompt
-- unclear acceptance criteria
-- missing repo context
-- fixing symptoms instead of root cause
+- 给 Codex 的任务要具体且边界清晰
+- 每次运行尽量只聚焦一个结果
+- 大改动前先保证仓库工作区干净
+- 尽量在真实 git 仓库里运行它
+- 不要只看摘要，要看最终 diff
 
-## Practical Guardrails
+## 常见失败方式
 
-- define success explicitly
-- state what not to change
-- require tests where applicable
-- break large work into multiple runs
-- review diffs file-by-file after completion
+- 一个提示词里塞了过多改动
+- 验收标准不明确
+- 仓库上下文不足
+- 修复了症状，但没解决根因
+
+## 实用护栏
+
+- 明确定义成功标准
+- 明确说明哪些内容不要动
+- 需要测试时明确要求测试
+- 大任务拆成多轮执行
+- 完成后逐文件审查 diff

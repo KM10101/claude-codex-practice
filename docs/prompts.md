@@ -1,37 +1,37 @@
 # 提示词模板
 
-## Feature Task
+## 功能任务模板
 
 ```text
-Implement the following task with the smallest safe change set.
+请用最小且安全的改动集完成下面这个任务。
 
-Task:
+任务：
 {{TASK}}
 
-Constraints:
-- preserve existing patterns
-- avoid unrelated edits
-- update tests only where needed
-- summarize touched files, tests run, and remaining risks
+约束：
+- 保持现有代码模式
+- 避免无关改动
+- 只在必要时更新测试
+- 总结 touched files、tests run 和 remaining risks
 ```
 
-## Debug Task
+## 调试任务模板
 
 ```text
-Investigate and fix the following bug.
+请调查并修复下面这个 bug。
 
-Bug:
+问题：
 {{BUG}}
 
-Requirements:
-- identify root cause first
-- prefer the smallest safe fix
-- add or update regression coverage if appropriate
-- summarize cause, fix, and verification
+要求：
+- 先识别根因
+- 优先采用最小且安全的修复
+- 如有必要，补充或更新回归覆盖
+- 总结原因、修复方式和验证结果
 ```
 
 ## 建议用法
 
 - 把 `{{TASK}}` 或 `{{BUG}}` 替换成具体上下文
-- 对高风险任务补充“不要修改哪些内容”
-- 让工具输出 touched files、tests run、remaining risks
+- 对高风险任务补充“哪些内容不要改”
+- 让工具在输出里明确列出 touched files、tests run、remaining risks

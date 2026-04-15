@@ -1,47 +1,47 @@
-# Shared Playbook
+# 通用操作手册
 
-## Golden Workflow
+## 黄金工作流
 
-1. understand the task
-2. inspect the repository
-3. constrain the scope
-4. ask for a plan if risk is non-trivial
-5. implement in small steps
-6. verify with tests and diff review
-7. summarize what changed and what remains uncertain
+1. 先理解任务
+2. 再检查仓库
+3. 收紧任务范围
+4. 如果风险不低，就先要计划
+5. 小步实施
+6. 用测试和 diff review 做验证
+7. 总结改了什么、还有哪些不确定项
 
-## Prompting Rules
+## 提示词规则
 
-- specify the objective clearly
-- specify constraints clearly
-- name non-goals
-- ask for touched files
-- ask for tests and verification
-- ask for assumptions and risks
+- 明确写出目标
+- 明确写出约束
+- 写清楚非目标项
+- 要求工具列出 touched files
+- 要求工具说明测试与验证方式
+- 要求工具列出假设和风险
 
-## Useful Constraints
+## 常用约束
 
-- smallest safe diff
-- preserve current architecture
-- no new dependencies unless necessary
-- do not rename files unless required
-- do not change public API unless stated
-- prefer existing project patterns
+- 最小且安全的 diff
+- 保持当前架构不变
+- 除非必要，不新增依赖
+- 除非必须，不重命名文件
+- 除非明确要求，不修改公共 API
+- 优先沿用项目现有模式
 
-## Review Checklist
+## 评审清单
 
-- is the root cause actually addressed?
-- does the diff introduce new complexity?
-- are tests aligned with behavior?
-- are logs, errors, and edge cases handled?
-- does the solution match the repo's style?
+- 根因是否真的被解决？
+- 这次 diff 是否引入了新的复杂度？
+- 测试是否和实际行为一致？
+- 日志、错误处理和边界情况是否覆盖？
+- 方案是否符合仓库原有风格？
 
-## When to Stop Using the Agent
+## 什么时候该停下来人工接管
 
-Pause and inspect manually when:
+出现下面情况时，先暂停并人工检查：
 
-- the tool starts changing unrelated files
-- the problem statement is still unclear
-- the repo conventions are not yet understood
-- multiple failed attempts suggest model confusion
-- the generated approach feels too clever for the problem
+- 工具开始改无关文件
+- 问题定义本身还不清晰
+- 仓库约定还没有搞明白
+- 多次失败说明模型已经混乱
+- 生成出来的方案对问题来说“聪明过头”了

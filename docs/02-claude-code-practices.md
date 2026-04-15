@@ -1,70 +1,70 @@
-# Claude Code Practices
+# Claude Code 实践
 
-## Best Uses
+## 适合用它的场景
 
-Claude Code is a great fit for:
+Claude Code 很适合处理这些任务：
 
-- repo understanding
-- architecture exploration
-- implementation planning
-- complex debugging
-- careful refactors
-- code review and explanation
+- 理解仓库
+- 梳理架构
+- 规划实现方案
+- 复杂调试
+- 谨慎的重构工作
+- 代码评审与解释
 
-## High-Value Prompt Shapes
+## 高价值提示词形态
 
-### 1. Ask for an implementation plan first
-
-```text
-Inspect this repository and propose a minimal implementation plan for adding X.
-Do not edit code yet.
-Call out risks, touched files, and test strategy.
-```
-
-### 2. Ask for a review before edits
+### 1. 先让它给出实现计划
 
 ```text
-Review the current implementation of X.
-Find correctness, safety, and maintainability risks.
-Prioritize issues by severity.
-Do not change code yet.
+请先阅读这个仓库，并为新增 X 给出一个最小可行的实现计划。
+先不要改代码。
+请指出风险点、会修改到的文件，以及测试策略。
 ```
 
-### 3. Ask for scoped edits
+### 2. 先让它做评审再改动
 
 ```text
-Implement X with the smallest possible change set.
-Preserve existing patterns.
-Update tests only where necessary.
-Summarize the diff afterward.
+请评审当前 X 的实现。
+找出正确性、安全性和可维护性方面的风险。
+按严重程度排序。
+先不要修改代码。
 ```
 
-### 4. Ask for explanation and learning support
+### 3. 让它做有边界的改动
 
 ```text
-Explain this module like I am a backend engineer new to this codebase.
-Focus on data flow, boundaries, and hidden assumptions.
+请用尽可能小的改动集实现 X。
+保持现有代码模式不变。
+只在必要时更新测试。
+最后用简明语言总结 diff。
 ```
 
-## Good Habits
+### 4. 让它承担解释和学习辅助
 
-- start with read/plan/review mode for important work
-- ask it to name the files it expects to touch
-- ask for risk analysis before large refactors
-- ask it to summarize the diff in plain language
-- ask it to identify missing tests after implementation
+```text
+请把这个模块讲解给一个刚接触这个代码库的后端工程师。
+重点说明数据流、边界，以及隐藏假设。
+```
 
-## Common Failure Modes
+## 好习惯
 
-- over-designing a small task
-- making broad changes when a surgical change is better
-- assuming conventions that are not actually in the repo
-- sounding convincing even when details need verification
+- 对重要任务，先走 read / plan / review 模式
+- 让它先说出预计会改哪些文件
+- 大型重构前，让它先做风险分析
+- 让它用通俗语言总结最终 diff
+- 实现完成后，让它指出可能缺失的测试
 
-## Practical Guardrails
+## 常见失败方式
 
-- request minimal diffs
-- anchor to existing patterns in the codebase
-- require test strategy in the response
-- read the final diff yourself
-- ask for rollback strategy on risky changes
+- 对一个小任务过度设计
+- 本该做手术式改动，却改得过宽
+- 假设仓库里存在某些约定，但实际上并没有
+- 说服力很强，但细节还需要人工核验
+
+## 实用护栏
+
+- 明确要求最小 diff
+- 明确要求贴合仓库现有模式
+- 明确要求回答中包含测试策略
+- 自己亲自看最终 diff
+- 对高风险改动要求提供回滚思路

@@ -1,62 +1,63 @@
-# Overview: Claude Code vs Codex
+# 概览：Claude Code 与 Codex
 
-## Core Positioning
+## 核心定位
 
-Both Claude Code and Codex are AI coding agents, but they feel different in practice.
+Claude Code 和 Codex 都属于 AI 编码代理，但在实际使用中，侧重点并不一样。
 
-### Claude Code is especially strong at
+### Claude Code 更擅长
 
-- understanding larger code context
-- planning before changing code
-- multi-step refactors
-- reviewing architecture and trade-offs
-- generating high-quality explanations
-- turning vague requests into structured work
+- 理解更大的代码上下文
+- 在改代码前先做规划
+- 处理多步骤重构
+- 审视架构与方案权衡
+- 生成高质量解释
+- 把模糊需求整理成结构化任务
 
-### Codex is especially strong at
+### Codex 更擅长
 
-- quick repository tasks
-- concrete implementation work inside git repos
-- fast code edits with direct execution loops
-- straightforward bugfix and feature tasks
-- practical command-line driven coding sessions
+- 快速处理仓库中的具体任务
+- 在 git 仓库内执行明确的实现工作
+- 以直接执行循环完成快速改动
+- 处理直给型的 bugfix 和 feature 任务
+- 进行偏命令行风格的实操编码
 
-## A Simple Default Rule
+## 一个简单的默认规则
 
-Use **Claude Code first** when the task is:
+在下面这些场景下，优先考虑 **Claude Code**：
 
-- ambiguous
-- architecture-heavy
-- risky to change
-- large in scope
-- better served by a plan or review first
+- 需求本身还有歧义
+- 架构权衡比较重
+- 改动风险较高
+- 任务范围较大
+- 更适合先做计划或评审
 
-Use **Codex first** when the task is:
+在下面这些场景下，优先考虑 **Codex**：
 
-- concrete
-- implementation-heavy
-- already scoped clearly
-- naturally tied to a git repo
-- best handled as a direct code task
+- 任务已经非常具体
+- 重点是直接实现
+- 范围已经划定清楚
+- 天然依附于某个 git 仓库
+- 更适合直接作为代码任务执行
 
-## Strong Combined Pattern
+## 强组合模式
 
-A very effective workflow is:
+一个很有效的工作流是：
 
-1. use Claude Code to inspect, explain, and plan
-2. use Codex to execute a focused implementation task
-3. use Claude Code again to review, summarize, or refactor
+1. 先用 Claude Code 做阅读、解释和规划
+2. 再用 Codex 执行聚焦的实现任务
+3. 最后再用 Claude Code 做复查、总结或重构建议
 
-This pattern reduces drift and improves reliability.
+这种组合方式可以减少跑偏，并提高整体可靠性。
 
-## What Not to Do
+## 不建议这样做
 
-- do not ask either tool to "fix everything" without boundaries
-- do not trust generated code without reading diffs
-- do not skip tests just because the agent says it works
-- do not let the tool own the architecture without supervision
+- 不要在没有边界的情况下让任一工具“把所有问题都修掉”
+- 不要不看 diff 就直接相信生成的代码
+- 不要因为工具说“已经好了”就跳过测试
+- 不要在你没有监督的前提下，把架构主导权完全交给工具
 
-## Success Metric
+## 成功标准
 
-The real success metric is not how much code the tool writes.
-The success metric is whether it reduces thinking overhead while preserving correctness and control.
+真正的成功标准，不是工具写了多少代码。
+
+真正的成功标准是：它是否在保证正确性和可控性的前提下，帮你减少了思考和执行成本。

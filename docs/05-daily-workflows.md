@@ -1,43 +1,43 @@
-# Daily Workflows
+# 日常工作流
 
-## Workflow 1: New Feature
+## 工作流 1：开发新功能
 
-1. ask for a quick architecture read
-2. ask for a minimal implementation plan
-3. execute the smallest useful slice
-4. run tests
-5. review diff
-6. refine only if needed
+1. 先让工具快速读一下架构
+2. 再让它给出最小实现计划
+3. 先做最小可用切片
+4. 运行测试
+5. 检查 diff
+6. 只在必要时继续细化
 
-## Workflow 2: Debugging
+## 工作流 2：调试
 
-1. reproduce the issue
-2. ask for root cause hypotheses
-3. inspect relevant code paths
-4. implement the smallest safe fix
-5. add or update regression tests
-6. summarize why the bug happened
+1. 先复现问题
+2. 让工具给出根因假设
+3. 检查相关代码路径
+4. 实现最小且安全的修复
+5. 增加或更新回归测试
+6. 总结 bug 为什么会出现
 
-## Workflow 3: Refactor
+## 工作流 3：重构
 
-1. ask for refactor boundaries first
-2. identify invariants that must not change
-3. perform small refactor steps
-4. run tests after each meaningful step
-5. produce a final behavior-preservation summary
+1. 先明确重构边界
+2. 识别不能改变的行为不变量
+3. 小步进行重构
+4. 每个关键步骤后跑测试
+5. 最后输出一份“行为保持不变”的总结
 
-## Workflow 4: Code Review
+## 工作流 4：代码评审
 
-1. provide the diff or PR context
-2. ask for severity-ranked findings
-3. separate correctness, maintainability, and style issues
-4. verify important comments manually
-5. convert useful findings into checklist items
+1. 提供 diff 或 PR 上下文
+2. 要求工具按严重程度输出问题
+3. 把正确性、可维护性、风格问题分开
+4. 对重要评论做人工复核
+5. 把有价值的发现沉淀成 checklist
 
-## Workflow 5: Technical Research
+## 工作流 5：技术调研
 
-1. ask for a comparison table
-2. ask for trade-offs in your context
-3. ask for decision criteria
-4. ask for a recommendation with assumptions
-5. write down the final conclusion in repo docs
+1. 先让工具给对比表
+2. 再让它结合你的场景讲权衡
+3. 要它给出决策标准
+4. 要它在说明假设的前提下给建议
+5. 把最终结论写回仓库文档
